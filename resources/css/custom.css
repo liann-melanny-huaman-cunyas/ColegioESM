@@ -1,0 +1,126 @@
+.fixed-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Asegura que el elemento esté por encima de otros elementos */
+    background-color: #003366; /* Ajusta el color de fondo según sea necesario */
+}
+
+/* Asegura que el menú de navegación esté por debajo de la barra superior */
+.fixed-nav {
+    position: fixed;
+    top: 48px; /* Ajusta según la altura de la barra superior */
+    left: 0;
+    width: 100%;
+    z-index: 999; /* Asegura que el menú de navegación esté por debajo de la barra superior */
+    background-color: #ffffff; /* Fondo blanco para el menú */
+}
+
+/* Asegura que el contenido de la página no quede oculto detrás del menú fijo */
+body {
+    margin-top: 60px; /* Ajusta según la altura combinada de la barra superior y el menú de navegación */
+}
+
+.header {
+    width: 100%;
+    background-image: url('../../public/img/portada.png'); /* Ruta relativa desde la raíz del proyecto */
+    background-position: center;
+    background-size: cover;
+    background-attachment: scroll;
+    height: 91.5vh;
+    position: relative;
+}
+
+
+.container-presetation {
+    position: relative;
+    width: 100%;
+    height: 91vh;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black; /* Ajusta según el diseño que desees */
+}
+
+.container-presetation::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/img/fondo.png'); /* Cambié la ruta de la imagen */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.05; /* Ajusta la opacidad aquí */
+    z-index: -1;
+}
+
+/* Animación de desvanecimiento para el slogan */
+.fade-in-slogan {
+    -ms-animation: fadeInSlogan ease 3s;  /* Usamos solo la propiedad estándar */
+    -webkit-animation: fadeInSlogan ease 3s;
+    -moz-animation: fadeInSlogan ease 3s;
+    -o-animation: fadeInSlogan ease 3s;
+    animation: fadeInSlogan ease 3s;
+}
+
+/* Keyframes para la animación del slogan */
+@keyframes fadeInSlogan {
+    0% {
+        margin-top: -500px; /* Comienza desde arriba fuera de la vista */
+        opacity: 0; /* Transparente al inicio */
+    }
+    100% {
+        margin-top: 0; /* Termina en su posición original */
+        opacity: 1; /* Totalmente visible al final */
+    }
+}
+
+/* Animación de desvanecimiento para el texto */
+.fade-in-text {
+    -ms-animation: fadeInText ease 3s;  /* Solo la propiedad estándar */
+    -webkit-animation: fadeInText ease 3s;
+    -moz-animation: fadeInText ease 3s;
+    -o-animation: fadeInText ease 3s;
+    animation: fadeInText ease 3s;
+}
+
+/* Keyframes para la animación del texto */
+@keyframes fadeInText {
+    0% {
+        margin-bottom: -30%; /* Comienza desde fuera de la vista */
+        opacity: 0; /* Transparente al inicio */
+    }
+    100% {
+        margin-bottom: 0; /* Termina en su posición original */
+        opacity: 1; /* Totalmente visible al final */
+    }
+}
+
+.container-values {
+    position: relative;
+    width: 100%;
+    min-height: 90vh; /* Usa min-height para que el contenedor se expanda según sea necesario */
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+.container-values::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/img/fondo.png'); /* Cambié la ruta de la imagen */
+    background-size: 100% 100%; /* La imagen se estira para cubrir todo el contenedor */
+    background-repeat: repeat; /* Evita que la imagen se repita */
+    opacity: 0.05; /* Ajusta la opacidad aquí */
+    z-index: -1;
+}
